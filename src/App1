@@ -1,1 +1,13 @@
-Todo aspp
+const input = process.argv[3];
+
+const command = process.argv[2];
+//console.log(`i should ${command} item : ${input}`);
+//const { readFile, writeFile } = require('fs').promises;
+const fs = require('node:fs');
+
+const content = 'Some content!';
+
+fs.writeFileSync('./Test1', "Hey there!");
+console.log('the file was saved');
+
+//fs.writeFileSync('/Desktop/GIt-Tutorial/src$-sync', 'Hey there!');
