@@ -6,8 +6,34 @@ const command = process.argv[2];
 const fs = require('node:fs');
 
 const content = 'Some content!';
+try {
+    fs.writeFileSync('./AddTodo', "Hey there!");
+    console.log('the file was saved');
+} catch (e) {
+    console.log('could not create file');
+}
+const contentTwo = 'Add line two!';
+try {
+    fs.appendFileSync('./AddTodo', "This is line two!", '\nThis is the second line.');
+    console.log('Second line added!');
+} catch (e) {
+    console.log('could not create file');
+}
+/*
+if (command === 'add') {
+    if (item) {
+        // Appends the item followed by a newline for readability
+        fs.appendFile('items.txt', item + '\n', (err) => {
+            if (err) throw err;
+            console.log(`Successfully added: "${item}"`);
+        });
+    } else {
+        console.log('Please provide an item to add.');
+    }
+} else {
+    console.log('Unknown command. Use "add" to append an item.');
+}
+    */
 
-fs.writeFileSync('./Test1', "Hey there!");
-console.log('the file was saved');
 
-//fs.writeFileSync('/Desktop/GIt-Tutorial/src$-sync', 'Hey there!');
+
