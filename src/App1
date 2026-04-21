@@ -16,7 +16,15 @@ if (command === 'add') {
     }
 }
 
-
+if (command === 'list') {
+    try {
+        const text = fs.readFileSync('./AddTodo').toString();
+        console.log(text);
+    } catch (e) {
+        console.log('could not find list');
+        console.log(e);
+    }
+}
 
 
 
