@@ -1,39 +1,49 @@
-const input = process.argv[3];
-
-const command = process.argv[2];
-//console.log(`i should ${command} item : ${input}`);
-//const { readFile, writeFile } = require('fs').promises;
 const fs = require('node:fs');
 
-const content = 'Some content!';
-try {
+// node App1 add food
+//   0   1    2    3
+
+const command = process.argv[2]; // add  
+const input = process.argv[3]; // food
+
+if (command === 'add') {
+    try {
+        fs.appendFileSync('./AddTodo', `\n${input}`);
+        console.log('line added to Todo');
+    } catch (e) {
+        console.log('could not append file');
+        console.log(e);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*try {
     fs.writeFileSync('./AddTodo', "Hey there!");
     console.log('the file was saved');
 } catch (e) {
     console.log('could not create file');
 }
-const contentTwo = 'Add line two!';
-try {
-    fs.appendFileSync('./AddTodo', "This is line two!", '\nThis is the second line.');
-    console.log('Second line added!');
-} catch (e) {
-    console.log('could not create file');
-}
-/*
-if (command === 'add') {
-    if (item) {
-        // Appends the item followed by a newline for readability
-        fs.appendFile('items.txt', item + '\n', (err) => {
-            if (err) throw err;
-            console.log(`Successfully added: "${item}"`);
-        });
-    } else {
-        console.log('Please provide an item to add.');
-    }
-} else {
-    console.log('Unknown command. Use "add" to append an item.');
-}
-    */
-
-
-
+const contentTwo = 'Add line two!';*/
